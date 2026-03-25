@@ -33,7 +33,7 @@ export default function About() {
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/352398883_755610973237574_2558701208069413354_n.jpg"
+                src="/images/cjc-logo.jpg"
                 alt="CJC Music logo"
                 fill
                 className="object-cover"

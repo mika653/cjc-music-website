@@ -36,7 +36,7 @@ export default function V3Hero() {
       {/* Hero image */}
       <div className="relative w-full h-[280px]">
         <Image
-          src="/images/657270971_1577453624386634_1384315655729934529_n.jpg"
+          src="/images/hero-v3.jpg"
           alt="Premium audio equipment"
           fill
           className="object-cover"

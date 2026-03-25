@@ -5,7 +5,7 @@ export default function V2Hero() {
     <section id="home" className="relative min-h-dvh flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/655964496_1577453444386652_3070640010238116173_n.jpg"
+          src="/images/hero-v2.jpg"
           alt="CJC Music professional audio"
           fill
           className="object-cover"

@@ -1,7 +1,6 @@
 import Header from "../Header";
 import Hero from "../Hero";
 import ProductCategories from "../ProductCategories";
-import FeaturedProducts from "../FeaturedProducts";
 import Brands from "../Brands";
 import About from "../About";
 import CTABanner from "../CTABanner";
@@ -16,8 +15,6 @@ export default function V1Page() {
         <Hero />
         <div className="section-divider" />
         <ProductCategories />
-        <div className="section-divider" />
-        <FeaturedProducts />
         <div className="section-divider" />
         <Brands />
         <div className="section-divider" />
