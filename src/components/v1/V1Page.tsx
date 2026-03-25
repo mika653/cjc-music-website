@@ -1,0 +1,31 @@
+import Header from "../Header";
+import Hero from "../Hero";
+import ProductCategories from "../ProductCategories";
+import FeaturedProducts from "../FeaturedProducts";
+import Brands from "../Brands";
+import About from "../About";
+import CTABanner from "../CTABanner";
+import Contact from "../Contact";
+import Footer from "../Footer";
+
+export default function V1Page() {
+  return (
+    <div className="bg-black text-white" style={{ fontFamily: "var(--font-poppins)" }}>
+      <Header />
+      <main>
+        <Hero />
+        <div className="section-divider" />
+        <ProductCategories />
+        <div className="section-divider" />
+        <FeaturedProducts />
+        <div className="section-divider" />
+        <Brands />
+        <div className="section-divider" />
+        <About />
+        <CTABanner />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
