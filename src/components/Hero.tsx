@@ -50,7 +50,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="#products"
+              href="/products"
               className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-black font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold/20 cursor-pointer text-base"
             >
               Explore Products

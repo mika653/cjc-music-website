@@ -12,7 +12,7 @@ const productLinks = [
 
 const companyLinks = [
   { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
+  { label: "Products", href: "/products" },
   { label: "Brands", href: "#brands" },
   { label: "Contact", href: "#contact" },
 ];
@@ -58,7 +58,7 @@ export default function Footer() {
               {productLinks.map((link) => (
                 <li key={link}>
                   <a
-                    href="#products"
+                    href="/products"
                     className="text-sm text-gray-500 hover:text-gold transition-colors cursor-pointer"
                   >
                     {link}

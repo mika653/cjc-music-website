@@ -23,7 +23,7 @@ export default function V3Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col gap-2.5">
-          <a href="#products" className="flex items-center justify-center gap-2 h-[52px] bg-gradient-to-r from-[#D4A574] to-[#C4853A] text-white font-semibold text-[15px] rounded-2xl shadow-[0_8px_24px_rgba(196,133,58,0.2)] cursor-pointer">
+          <a href="/products" className="flex items-center justify-center gap-2 h-[52px] bg-gradient-to-r from-[#D4A574] to-[#C4853A] text-white font-semibold text-[15px] rounded-2xl shadow-[0_8px_24px_rgba(196,133,58,0.2)] cursor-pointer">
             Explore Products
             <ArrowRight className="w-[18px] h-[18px]" />
           </a>

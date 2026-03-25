@@ -26,7 +26,7 @@ export default function V2Hero() {
           Home of branded sound systems, musical instruments &amp; AV equipment in the Philippines.
         </p>
         <div className="flex gap-3 mt-8">
-          <a href="#products" className="flex-1 flex items-center justify-center h-12 bg-[#C4853A] text-[#0A0A0A] text-xs font-semibold tracking-[1px] cursor-pointer font-[family-name:var(--font-ibm-plex-mono)]">
+          <a href="/products" className="flex-1 flex items-center justify-center h-12 bg-[#C4853A] text-[#0A0A0A] text-xs font-semibold tracking-[1px] cursor-pointer font-[family-name:var(--font-ibm-plex-mono)]">
             EXPLORE
           </a>
           <a href="#contact" className="flex-1 flex items-center justify-center h-12 border border-[#555555] text-white text-xs font-semibold tracking-[1px] cursor-pointer font-[family-name:var(--font-ibm-plex-mono)]">
