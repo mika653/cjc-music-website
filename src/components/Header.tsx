@@ -44,6 +44,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       {/* Top bar — contact info (hidden on mobile for clean hero) */}
       <div className="hidden md:block bg-gold/10 border-b border-gold/20">
         <div className="max-w-7xl mx-auto px-4 py-1.5 flex items-center justify-between text-xs text-gray-400">
@@ -102,7 +103,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-gold transition-colors cursor-pointer"
+            className="md:hidden w-11 h-11 flex items-center justify-center text-gray-300 hover:text-gold transition-colors cursor-pointer"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

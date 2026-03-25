@@ -34,6 +34,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Skip to content link — accessible keyboard nav */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 1rem 1.5rem;
+  background: var(--gold);
+  color: black;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.skip-to-content:focus {
+  left: 0;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

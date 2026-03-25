@@ -36,14 +36,14 @@ export default function Footer() {
                 href="https://facebook.com/cjcmusicph"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-charcoal/50 border border-white/5 text-gray-500 hover:text-gold hover:border-gold/20 transition-all cursor-pointer"
+                className="w-11 h-11 flex items-center justify-center rounded-lg bg-charcoal/50 border border-white/5 text-gray-500 hover:text-gold hover:border-gold/20 transition-all cursor-pointer"
                 aria-label="CJC Music Facebook Page"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
               <a
                 href="tel:09224457975"
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-charcoal/50 border border-white/5 text-gray-500 hover:text-gold hover:border-gold/20 transition-all cursor-pointer"
+                className="w-11 h-11 flex items-center justify-center rounded-lg bg-charcoal/50 border border-white/5 text-gray-500 hover:text-gold hover:border-gold/20 transition-all cursor-pointer"
                 aria-label="Call CJC Music"
               >
                 <Phone className="w-4 h-4" />

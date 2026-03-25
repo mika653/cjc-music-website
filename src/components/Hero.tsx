@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-v1.jpg"
-          alt="CJC Music professional audio equipment"
+          alt="DJ performing at a bar with professional audio speakers and mixing equipment under warm amber lighting"
           fill
           className="object-cover object-center"
           priority
@@ -24,9 +24,9 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="max-w-2xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-6">
+          <div className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <span className="text-xs font-medium text-gold tracking-wider uppercase">
+            <span className="text-xs font-medium text-gold-light tracking-wider uppercase">
               Your #1 Online Music Store in the Philippines
             </span>
           </div>

@@ -11,7 +11,7 @@ export default function V1Page() {
   return (
     <div className="bg-black text-white" style={{ fontFamily: "var(--font-poppins)" }}>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <div className="section-divider" />
         <ProductCategories />

@@ -76,6 +76,7 @@ export default function ProductCategories() {
             <a
               key={cat.title}
               href="#contact"
+              aria-label={`Inquire about ${cat.title}`}
               className="group relative bg-charcoal/50 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-gold/30 transition-all duration-300 hover:bg-charcoal/80 cursor-pointer"
             >
               {/* Icon */}

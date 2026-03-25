@@ -34,7 +34,7 @@ export default function About() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/cjc-logo.jpg"
-                alt="CJC Music logo"
+                alt="CJC Music — gold vinyl record logo on black background"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

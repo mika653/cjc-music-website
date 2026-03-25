@@ -9,10 +9,10 @@ const categories = [
 
 export default function V2Categories() {
   return (
-    <section id="products" className="px-5 py-12">
+    <section id="products" className="px-5 sm:px-8 py-12">
       <div className="mb-8">
-        <span className="block text-xs font-semibold tracking-[2px] text-[#C9A962] mb-3" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>02</span>
-        <h2 className="text-4xl font-bold text-white leading-[1] tracking-[-1px]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <span className="block text-xs font-semibold tracking-[2px] text-[#C4853A] mb-3 font-[family-name:var(--font-ibm-plex-mono)]">02</span>
+        <h2 className="text-[28px] sm:text-4xl font-bold text-white leading-[1] tracking-[-1px] font-[family-name:var(--font-space-grotesk)]">
           PRODUCT<br />CATEGORIES
         </h2>
       </div>
@@ -21,10 +21,11 @@ export default function V2Categories() {
           <a
             key={cat.num}
             href="#contact"
+            aria-label={`Inquire about ${cat.title.toLowerCase()}`}
             className="flex items-center gap-4 py-5 border-b border-[#333333] group cursor-pointer"
           >
-            <span className="text-[11px] font-semibold text-[#444444]" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>{cat.num}</span>
-            <span className="text-base font-semibold text-white group-hover:text-[#C9A962] transition-colors" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{cat.title}</span>
+            <span className="text-[11px] font-semibold text-[#666666] font-[family-name:var(--font-ibm-plex-mono)]">{cat.num}</span>
+            <span className="text-sm sm:text-base font-semibold text-white group-hover:text-[#C4853A] transition-colors font-[family-name:var(--font-space-grotesk)]">{cat.title}</span>
           </a>
         ))}
       </div>

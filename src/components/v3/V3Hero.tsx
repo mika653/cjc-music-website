@@ -8,16 +8,16 @@ export default function V3Hero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-1.5 bg-[#16161A] rounded-full px-4 py-1.5 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-[#32D583]" />
-          <span className="text-[11px] font-medium text-[#6B6B70]">Now serving all of Philippines</span>
+          <span className="text-[11px] font-medium text-[#8A8A90]">Now serving all of Philippines</span>
         </div>
 
         {/* Headline */}
-        <h1 style={{ fontFamily: "'Fraunces', serif" }} className="text-[40px] font-medium text-[#FAFAF9] leading-[1.15] tracking-[-0.8px] mb-6">
+        <h1 className="font-[family-name:var(--font-fraunces)] text-[40px] font-medium text-[#FAFAF9] leading-[1.15] tracking-[-0.8px] mb-6">
           Sound that<br />moves people.
         </h1>
 
         {/* Subheadline */}
-        <p className="text-[15px] text-[#6B6B70] leading-[1.6] max-w-xs mx-auto mb-8">
+        <p className="text-[15px] text-[#8A8A90] leading-[1.6] max-w-xs mx-auto mb-8">
           Premium professional audio, musical instruments, and AV equipment — curated for performers, studios, and events.
         </p>
 
@@ -34,10 +34,10 @@ export default function V3Hero() {
       </section>
 
       {/* Hero image */}
-      <div className="relative w-full h-[280px]">
+      <div className="relative w-full h-[380px]">
         <Image
           src="/images/hero-v3.jpg"
-          alt="Premium audio equipment"
+          alt="Warm ambient lighting with professional audio equipment in a modern performance space"
           fill
           className="object-cover"
           sizes="100vw"
@@ -45,6 +45,26 @@ export default function V3Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0E] via-transparent to-[#0B0B0E]/30" />
       </div>
+
+      {/* Trust stats */}
+      <section className="px-6 py-10">
+        <div className="flex items-center justify-between max-w-sm mx-auto">
+          <div className="text-center">
+            <div className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-[#FAFAF9]">10+</div>
+            <div className="text-[11px] text-[#8A8A90] mt-1">Years</div>
+          </div>
+          <div className="w-px h-8 bg-[#2A2A2E]" />
+          <div className="text-center">
+            <div className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-[#FAFAF9]">500+</div>
+            <div className="text-[11px] text-[#8A8A90] mt-1">Happy Clients</div>
+          </div>
+          <div className="w-px h-8 bg-[#2A2A2E]" />
+          <div className="text-center">
+            <div className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-[#FAFAF9]">50+</div>
+            <div className="text-[11px] text-[#8A8A90] mt-1">Brands</div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
