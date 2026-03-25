@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, ChevronRight, ShoppingBag } from "lucide-react";
 
 const navLinks = [
   { label: "HOME", href: "#home" },
@@ -49,6 +50,13 @@ export default function V2Header() {
               <ChevronRight className="w-4 h-4 text-[#666666]" />
             </a>
           ))}
+          <Link href="/products" onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between py-5 border-b border-[#333333] transition-colors cursor-pointer group font-[family-name:var(--font-ibm-plex-mono)]">
+            <span className="flex items-center gap-2 text-sm font-semibold tracking-[1px] text-[#C4853A]">
+              <ShoppingBag className="w-4 h-4" /> CATALOGUE
+            </span>
+            <ChevronRight className="w-4 h-4 text-[#666666]" />
+          </Link>
           <div className="mt-auto">
             <a href="#contact" onClick={() => setMenuOpen(false)} className="block w-full text-center bg-[#C4853A] text-[#0A0A0A] py-4 font-semibold text-xs tracking-[1px] cursor-pointer font-[family-name:var(--font-ibm-plex-mono)]">
               GET A QUOTE

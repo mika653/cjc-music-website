@@ -7,6 +7,7 @@ import {
   X,
   Phone,
   ChevronRight,
+  ShoppingBag,
 } from "lucide-react";
 import { FacebookIcon } from "./icons";
 
@@ -17,6 +18,8 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
+
+const catalogueLink = { label: "Catalogue", href: "/products" };
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -90,6 +93,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <Link
+              href={catalogueLink.href}
+              className="flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light transition-colors cursor-pointer"
+            >
+              <ShoppingBag className="w-4 h-4" />
+              {catalogueLink.label}
+            </Link>
           </div>
 
           {/* Desktop CTA */}
@@ -132,6 +142,17 @@ export default function Header() {
                 <ChevronRight className="w-5 h-5 text-gray-600" />
               </a>
             ))}
+            <Link
+              href={catalogueLink.href}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between py-4 text-lg font-semibold text-gold border-b border-white/5 transition-colors cursor-pointer"
+            >
+              <span className="flex items-center gap-2">
+                <ShoppingBag className="w-5 h-5" />
+                {catalogueLink.label}
+              </span>
+              <ChevronRight className="w-5 h-5 text-gray-600" />
+            </Link>
           </div>
 
           <div className="mt-auto flex flex-col gap-4">
