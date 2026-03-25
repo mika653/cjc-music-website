@@ -4,9 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronRight, ShoppingBag } from "lucide-react";
 
-const navLinks = [
+const sectionLinks = [
   { label: "HOME", href: "#home" },
-  { label: "PRODUCTS", href: "#products" },
   { label: "BRANDS", href: "#brands" },
   { label: "ABOUT", href: "#about" },
   { label: "CONTACT", href: "#contact" },
@@ -42,7 +41,14 @@ export default function V2Header() {
 
       <div className={`fixed inset-0 top-14 bg-[#0A0A0A]/98 backdrop-blur-lg transition-all duration-300 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         <div className="flex flex-col h-full px-5 pt-8 pb-12">
-          {navLinks.map((link) => (
+          <Link href="/products" onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between py-5 border-b border-[#333333] transition-colors cursor-pointer group font-[family-name:var(--font-ibm-plex-mono)]">
+            <span className="flex items-center gap-2 text-sm font-semibold tracking-[1px] text-[#C4853A]">
+              <ShoppingBag className="w-4 h-4" /> PRODUCTS
+            </span>
+            <ChevronRight className="w-4 h-4 text-[#666666]" />
+          </Link>
+          {sectionLinks.map((link) => (
             <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
               aria-label={link.label}
               className="flex items-center justify-between py-5 border-b border-[#333333] transition-colors cursor-pointer group font-[family-name:var(--font-ibm-plex-mono)]">
@@ -50,13 +56,6 @@ export default function V2Header() {
               <ChevronRight className="w-4 h-4 text-[#666666]" />
             </a>
           ))}
-          <Link href="/products" onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-between py-5 border-b border-[#333333] transition-colors cursor-pointer group font-[family-name:var(--font-ibm-plex-mono)]">
-            <span className="flex items-center gap-2 text-sm font-semibold tracking-[1px] text-[#C4853A]">
-              <ShoppingBag className="w-4 h-4" /> CATALOGUE
-            </span>
-            <ChevronRight className="w-4 h-4 text-[#666666]" />
-          </Link>
           <div className="mt-auto">
             <a href="#contact" onClick={() => setMenuOpen(false)} className="block w-full text-center bg-[#C4853A] text-[#0A0A0A] py-4 font-semibold text-xs tracking-[1px] cursor-pointer font-[family-name:var(--font-ibm-plex-mono)]">
               GET A QUOTE

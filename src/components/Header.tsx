@@ -11,15 +11,12 @@ import {
 } from "lucide-react";
 import { FacebookIcon } from "./icons";
 
-const navLinks = [
+const sectionLinks = [
   { label: "Home", href: "#home" },
-  { label: "Products", href: "#products" },
   { label: "Brands", href: "#brands" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
-
-const catalogueLink = { label: "Catalogue", href: "/products" };
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,7 +81,7 @@ export default function Header() {
 
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {sectionLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -94,11 +91,11 @@ export default function Header() {
               </a>
             ))}
             <Link
-              href={catalogueLink.href}
+              href="/products"
               className="flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light transition-colors cursor-pointer"
             >
               <ShoppingBag className="w-4 h-4" />
-              {catalogueLink.label}
+              Products
             </Link>
           </div>
 
@@ -131,7 +128,18 @@ export default function Header() {
       >
         <div className="flex flex-col h-full px-6 pt-8 pb-12">
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
+            <Link
+              href="/products"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between py-4 text-lg font-semibold text-gold border-b border-white/5 transition-colors cursor-pointer"
+            >
+              <span className="flex items-center gap-2">
+                <ShoppingBag className="w-5 h-5" />
+                Products
+              </span>
+              <ChevronRight className="w-5 h-5 text-gray-600" />
+            </Link>
+            {sectionLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -142,17 +150,6 @@ export default function Header() {
                 <ChevronRight className="w-5 h-5 text-gray-600" />
               </a>
             ))}
-            <Link
-              href={catalogueLink.href}
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between py-4 text-lg font-semibold text-gold border-b border-white/5 transition-colors cursor-pointer"
-            >
-              <span className="flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5" />
-                {catalogueLink.label}
-              </span>
-              <ChevronRight className="w-5 h-5 text-gray-600" />
-            </Link>
           </div>
 
           <div className="mt-auto flex flex-col gap-4">
