@@ -1,7 +1,7 @@
 export default function V2CTA() {
   return (
     <section id="contact" className="bg-[#C4853A] px-5 sm:px-8 py-16 text-center">
-      <span className="block text-xs font-semibold tracking-[2px] text-[#0A0A0A66] mb-4 font-[family-name:var(--font-ibm-plex-mono)]">04</span>
+      <span className="block text-xs font-semibold tracking-[2px] text-[#0A0A0A66] mb-4 font-[family-name:var(--font-ibm-plex-mono)]">06</span>
       <h2 className="text-[28px] sm:text-4xl font-bold text-[#0A0A0A] leading-[1] tracking-[-1px] mb-5 font-[family-name:var(--font-space-grotesk)]">
         READY TO<br />UPGRADE<br />YOUR SOUND?
       </h2>

@@ -3,6 +3,7 @@ import V2Hero from "./V2Hero";
 import V2Stats from "./V2Stats";
 import V2Categories from "./V2Categories";
 import V2Brands from "./V2Brands";
+import V2About from "./V2About";
 import V2CTA from "./V2CTA";
 import V2Footer from "./V2Footer";
 
@@ -15,6 +16,7 @@ export default function V2Page() {
         <V2Stats />
         <V2Categories />
         <V2Brands />
+        <V2About />
         <V2CTA />
       </main>
       <V2Footer />

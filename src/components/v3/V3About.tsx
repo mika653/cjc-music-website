@@ -19,15 +19,14 @@ export default function V3About() {
       </div>
 
       {/* Logo image */}
-      <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-6">
+      <div className="relative w-48 h-48 mx-auto rounded-2xl overflow-hidden mb-6">
         <Image
           src="/images/cjc-logo.jpg"
-          alt="CJC Music — gold vinyl record logo on black background"
+          alt="CJC Music — gold vinyl record logo surrounded by musical instrument silhouettes"
           fill
-          className="object-cover"
-          sizes="100vw"
+          className="object-contain"
+          sizes="192px"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0E]/60 to-transparent" />
       </div>
 
       <p className="text-sm text-[#8A8A90] leading-[1.7] text-center mb-8 max-w-sm mx-auto">

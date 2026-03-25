@@ -31,15 +31,14 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image / visual side */}
           <div className="relative">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="relative aspect-square rounded-2xl overflow-hidden max-w-md mx-auto">
               <Image
                 src="/images/cjc-logo.jpg"
-                alt="CJC Music — gold vinyl record logo on black background"
+                alt="CJC Music — gold vinyl record logo surrounded by musical instrument silhouettes"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
             </div>
             {/* Decorative accent */}
             <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-gold/20 rounded-2xl -z-10 hidden sm:block" />
