@@ -101,7 +101,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </h1>
 
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl font-bold text-[#C4853A]">{product.price}</span>
+              <span className="text-2xl font-bold text-[#C4853A]">₱{product.price.toLocaleString()}</span>
               <span className={`text-xs font-medium px-2.5 py-1 rounded-md ${product.availability === "In Stock" ? "bg-emerald-500/10 text-emerald-400" : product.availability === "Pre-order" ? "bg-amber-500/10 text-amber-400" : "bg-white/10 text-gray-400"}`}>
                 {product.availability}
               </span>
@@ -138,10 +138,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div>
               <h2 className="text-sm font-semibold text-white mb-4">Specifications</h2>
               <div className="grid gap-px bg-white/5 rounded-xl overflow-hidden">
-                {Object.entries(product.specs).map(([key, value]) => (
-                  <div key={key} className="flex items-center bg-[#111111] px-4 py-3">
-                    <span className="w-1/3 text-xs text-gray-500 font-medium">{key}</span>
-                    <span className="flex-1 text-sm text-white">{value}</span>
+                {product.specs.map((spec) => (
+                  <div key={spec.key} className="flex items-center bg-[#111111] px-4 py-3">
+                    <span className="w-1/3 text-xs text-gray-500 font-medium">{spec.key}</span>
+                    <span className="flex-1 text-sm text-white">{spec.value}</span>
                   </div>
                 ))}
               </div>

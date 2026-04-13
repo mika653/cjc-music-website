@@ -4,14 +4,16 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, X, SlidersHorizontal, ChevronRight, Phone, MessageCircle } from "lucide-react";
-import { products, categories, type Category } from "@/data/products";
+import { products, categories } from "@/data/products";
 
 const PRODUCTS_PER_PAGE = 24;
 
+const categoryNames = categories.map(c => c.name);
+
 export default function ProductsPage() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState<Category | "All">("All");
-  const [activeBrand, setActiveBrand] = useState<string | "All">("All");
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeBrand, setActiveBrand] = useState<string>("All");
   const [page, setPage] = useState(1);
   const [showFilters, setShowFilters] = useState(false);
 
@@ -38,7 +40,7 @@ export default function ProductsPage() {
         p.brand.toLowerCase().includes(q) ||
         p.category.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q) ||
-        Object.values(p.specs).some(v => v.toLowerCase().includes(q))
+        p.specs.some(s => s.value.toLowerCase().includes(q))
       );
     }
 
@@ -50,7 +52,7 @@ export default function ProductsPage() {
   const paginated = filtered.slice((page - 1) * PRODUCTS_PER_PAGE, page * PRODUCTS_PER_PAGE);
 
   // Reset page when filters change
-  const handleCategoryChange = (cat: Category | "All") => {
+  const handleCategoryChange = (cat: string) => {
     setActiveCategory(cat);
     setActiveBrand("All");
     setPage(1);
@@ -114,10 +116,10 @@ export default function ProductsPage() {
             className={`flex-shrink-0 px-4 py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${activeCategory === "All" ? "bg-[#C4853A] text-black" : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"}`}>
             All
           </button>
-          {categories.map((cat) => (
-            <button key={cat} onClick={() => handleCategoryChange(cat)}
-              className={`flex-shrink-0 px-4 py-2 text-xs font-medium rounded-lg transition-all cursor-pointer whitespace-nowrap ${activeCategory === cat ? "bg-[#C4853A] text-black" : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"}`}>
-              {cat}
+          {categoryNames.map((name) => (
+            <button key={name} onClick={() => handleCategoryChange(name)}
+              className={`flex-shrink-0 px-4 py-2 text-xs font-medium rounded-lg transition-all cursor-pointer whitespace-nowrap ${activeCategory === name ? "bg-[#C4853A] text-black" : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"}`}>
+              {name}
             </button>
           ))}
         </div>
@@ -182,7 +184,7 @@ export default function ProductsPage() {
                 <div className="p-3 sm:p-4">
                   <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wider">{product.brand}</p>
                   <h3 className="text-sm font-semibold text-white group-hover:text-[#C4853A] transition-colors mt-0.5 line-clamp-2">{product.name}</h3>
-                  <p className="text-xs text-[#C4853A] font-semibold mt-2">{product.price}</p>
+                  <p className="text-xs text-[#C4853A] font-semibold mt-2">₱{product.price.toLocaleString()}</p>
                   <div className="flex items-center gap-1 mt-2 text-[10px] text-gray-500 group-hover:text-[#C4853A] transition-colors">
                     View details <ChevronRight className="w-3 h-3" />
                   </div>
