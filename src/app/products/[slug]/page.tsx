@@ -15,8 +15,21 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     const product = products.find((p) => p.slug === slug);
     if (!product) return { title: "Product Not Found" };
     return {
-      title: `${product.name} — ${product.brand} | CJC Music Philippines`,
+      title: `${product.name} - ${product.brand}`,
       description: product.description,
+      alternates: {
+        canonical: `/products/${slug}`,
+      },
+      openGraph: {
+        title: `${product.name} - ${product.brand} | CJC Music Philippines`,
+        description: product.description,
+        images: [
+          {
+            url: product.image,
+            alt: product.name,
+          },
+        ],
+      },
     };
   });
 }
@@ -32,8 +45,63 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     .filter((p) => p.category === product.category && p.slug !== product.slug)
     .slice(0, 4);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    brand: { "@type": "Brand", name: product.brand },
+    description: product.description,
+    image: `https://cjcmusicphilippines.com${product.image}`,
+    url: `https://cjcmusicphilippines.com/products/${product.slug}`,
+    offers: {
+      "@type": "Offer",
+      price: product.salePrice || product.price,
+      priceCurrency: "PHP",
+      availability:
+        product.availability === "In Stock"
+          ? "https://schema.org/InStock"
+          : "https://schema.org/PreOrder",
+      seller: {
+        "@type": "Organization",
+        name: "CJC Music Philippines",
+      },
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://cjcmusicphilippines.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://cjcmusicphilippines.com/products",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-dvh bg-[#111111] text-white" style={{ fontFamily: "var(--font-poppins)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#111111]/95 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
