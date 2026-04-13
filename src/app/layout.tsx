@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Righteous } from "next/font/google";
+import FloatingMessenger from "@/components/FloatingMessenger";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -49,7 +50,10 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${righteous.variable} antialiased`}
     >
-      <body className="min-h-dvh flex flex-col">{children}</body>
+      <body className="min-h-dvh flex flex-col">
+        {children}
+        <FloatingMessenger />
+      </body>
     </html>
   );
 }
