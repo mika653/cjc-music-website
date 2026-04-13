@@ -1,21 +1,31 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, X, SlidersHorizontal, ChevronRight, Phone, MessageCircle } from "lucide-react";
 import { products, categories } from "@/data/products";
+import { Suspense } from "react";
 
 const PRODUCTS_PER_PAGE = 24;
 
 const categoryNames = categories.map(c => c.name);
 
-export default function ProductsPage() {
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category") || "All";
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>(categoryParam);
   const [activeBrand, setActiveBrand] = useState<string>("All");
   const [page, setPage] = useState(1);
   const [showFilters, setShowFilters] = useState(false);
+
+  useEffect(() => {
+    if (categoryParam && categoryParam !== "All" && categoryNames.includes(categoryParam)) {
+      setActiveCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   // Get brands for current category
   const availableBrands = useMemo(() => {
@@ -252,5 +262,13 @@ export default function ProductsPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense>
+      <ProductsContent />
+    </Suspense>
   );
 }
