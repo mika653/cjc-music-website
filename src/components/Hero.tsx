@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChevronRight, Play } from "lucide-react";
+import { ChevronRight, Phone } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -60,8 +60,8 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-gold/50 text-white hover:text-gold font-medium px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer text-base"
             >
-              <Play className="w-4 h-4" />
-              Request a Demo
+              <Phone className="w-4 h-4" />
+              Contact Us
             </a>
           </div>
 

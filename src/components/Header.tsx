@@ -2,17 +2,19 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Menu,
   X,
   Phone,
   ChevronRight,
-  ShoppingBag,
+  MessageCircle,
 } from "lucide-react";
 import { FacebookIcon } from "./icons";
 
-const sectionLinks = [
+const navLinks = [
   { label: "Home", href: "#home" },
+  { label: "Products", href: "/products" },
   { label: "Brands", href: "#brands" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -28,7 +30,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -45,67 +46,60 @@ export default function Header() {
       }`}
     >
       <a href="#main-content" className="skip-to-content">Skip to content</a>
-      {/* Top bar — contact info (hidden on mobile for clean hero) */}
-      <div className="hidden md:block bg-gold/10 border-b border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 py-1.5 flex items-center justify-between text-xs text-gray-400">
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:09224457975"
-              className="flex items-center gap-1.5 hover:text-gold transition-colors cursor-pointer"
-            >
-              <Phone className="w-3 h-3" />
-              0922-4457975
-            </a>
-          </div>
-          <a
-            href="https://facebook.com/cjcmusicph"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-gold transition-colors cursor-pointer"
-          >
-            <FacebookIcon className="w-3 h-3" />
-            Follow us on Facebook
-          </a>
-        </div>
-      </div>
 
       {/* Main nav */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2 cursor-pointer">
-            <span className="font-display text-2xl md:text-3xl text-gold-gradient tracking-wide">
+          <Link href="#home" className="flex items-center gap-3 cursor-pointer">
+            <Image
+              src="/images/cjc-logo.jpg"
+              alt="CJC Music"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <span className="font-display text-xl md:text-2xl text-gold-gradient tracking-wide">
               CJC MUSIC
             </span>
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
-            {sectionLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-300 hover:text-gold transition-colors cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-gold after:transition-all hover:after:w-full"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Link
-              href="/products"
-              className="flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light transition-colors cursor-pointer"
-            >
-              <ShoppingBag className="w-4 h-4" />
-              Products
-            </Link>
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => {
+              const isProducts = link.href === "/products";
+              const Tag = isProducts ? Link : "a";
+              return (
+                <Tag
+                  key={link.href}
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-gold rounded-lg hover:bg-white/5 transition-all cursor-pointer"
+                >
+                  {link.label}
+                </Tag>
+              );
+            })}
           </div>
 
-          {/* Desktop CTA */}
-          <a
-            href="#contact"
-            className="hidden md:inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-black font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
-          >
-            Get a Quote
-          </a>
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-2">
+            <a
+              href="tel:09224457975"
+              className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-gold hover:bg-white/5 transition-all cursor-pointer"
+              aria-label="Call CJC Music"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+            <a
+              href="https://m.me/cjcmusicph"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-black font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Message Us
+            </a>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -127,29 +121,22 @@ export default function Header() {
         }`}
       >
         <div className="flex flex-col h-full px-6 pt-8 pb-12">
-          <div className="flex flex-col gap-2">
-            <Link
-              href="/products"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between py-4 text-lg font-semibold text-gold border-b border-white/5 transition-colors cursor-pointer"
-            >
-              <span className="flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5" />
-                Products
-              </span>
-              <ChevronRight className="w-5 h-5 text-gray-600" />
-            </Link>
-            {sectionLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between py-4 text-lg font-medium text-gray-200 hover:text-gold border-b border-white/5 transition-colors cursor-pointer"
-              >
-                {link.label}
-                <ChevronRight className="w-5 h-5 text-gray-600" />
-              </a>
-            ))}
+          <div className="flex flex-col gap-1">
+            {navLinks.map((link) => {
+              const isProducts = link.href === "/products";
+              const Tag = isProducts ? Link : "a";
+              return (
+                <Tag
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center justify-between py-4 text-lg font-medium text-gray-200 hover:text-gold border-b border-white/5 transition-colors cursor-pointer"
+                >
+                  {link.label}
+                  <ChevronRight className="w-5 h-5 text-gray-600" />
+                </Tag>
+              );
+            })}
           </div>
 
           <div className="mt-auto flex flex-col gap-4">
@@ -170,11 +157,14 @@ export default function Header() {
               @cjcmusicph
             </a>
             <a
-              href="#contact"
+              href="https://m.me/cjcmusicph"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="mt-4 w-full text-center bg-gold hover:bg-gold-dark text-black font-semibold py-3.5 rounded-lg transition-colors cursor-pointer"
+              className="mt-4 w-full text-center inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-black font-semibold py-3.5 rounded-lg transition-colors cursor-pointer"
             >
-              Get a Quote
+              <MessageCircle className="w-5 h-5" />
+              Message Us
             </a>
           </div>
         </div>
