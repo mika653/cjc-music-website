@@ -16,7 +16,7 @@ export default function Brands() {
             Authorized Dealer
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-display text-white">
-            Brands we carry.
+            Brands We Carry
           </h2>
           <p className="mt-3 text-sm text-gray-400 max-w-lg mx-auto">
             Only genuine, branded products from the world&apos;s most respected
