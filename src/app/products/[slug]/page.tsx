@@ -100,8 +100,18 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {product.name}
             </h1>
 
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl font-bold text-[#C4853A]">₱{product.price.toLocaleString()}</span>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              {product.salePrice ? (
+                <>
+                  <span className="text-2xl font-bold text-red-400">₱{product.salePrice.toLocaleString()}</span>
+                  <span className="text-lg text-gray-600 line-through">₱{product.price.toLocaleString()}</span>
+                  <span className="text-xs font-bold bg-red-500/90 text-white px-2.5 py-1 rounded-md">
+                    SALE — SAVE ₱{(product.price - product.salePrice).toLocaleString()}
+                  </span>
+                </>
+              ) : (
+                <span className="text-2xl font-bold text-[#C4853A]">₱{product.price.toLocaleString()}</span>
+              )}
               <span className={`text-xs font-medium px-2.5 py-1 rounded-md ${product.availability === "In Stock" ? "bg-emerald-500/10 text-emerald-400" : product.availability === "Pre-order" ? "bg-amber-500/10 text-amber-400" : "bg-white/10 text-gray-400"}`}>
                 {product.availability}
               </span>

@@ -171,20 +171,39 @@ export default function ProductsPage() {
                       {product.availability}
                     </span>
                   </div>
-                  {product.featured && (
-                    <div className="absolute top-2 right-2">
+                  <div className="absolute top-2 right-2 flex flex-col gap-1 items-end">
+                    {product.salePrice && (
+                      <span className="text-[10px] font-bold bg-red-500/90 text-white px-2 py-0.5 rounded-md">
+                        SALE
+                      </span>
+                    )}
+                    {product.spotlight && (
+                      <span className="text-[10px] font-bold bg-gold/90 text-black px-2 py-0.5 rounded-md">
+                        SPOTLIGHT
+                      </span>
+                    )}
+                    {!product.salePrice && !product.spotlight && product.featured && (
                       <span className="text-[10px] font-semibold bg-[#C4853A]/10 text-[#C4853A] border border-[#C4853A]/20 px-2 py-0.5 rounded-md">
                         Featured
                       </span>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
 
                 {/* Info */}
                 <div className="p-3 sm:p-4">
                   <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wider">{product.brand}</p>
                   <h3 className="text-sm font-semibold text-white group-hover:text-[#C4853A] transition-colors mt-0.5 line-clamp-2">{product.name}</h3>
-                  <p className="text-xs text-[#C4853A] font-semibold mt-2">₱{product.price.toLocaleString()}</p>
+                  <div className="mt-2">
+                    {product.salePrice ? (
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-red-400 font-semibold">₱{product.salePrice.toLocaleString()}</span>
+                        <span className="text-[10px] text-gray-600 line-through">₱{product.price.toLocaleString()}</span>
+                      </div>
+                    ) : (
+                      <p className="text-xs text-[#C4853A] font-semibold">₱{product.price.toLocaleString()}</p>
+                    )}
+                  </div>
                   <div className="flex items-center gap-1 mt-2 text-[10px] text-gray-500 group-hover:text-[#C4853A] transition-colors">
                     View details <ChevronRight className="w-3 h-3" />
                   </div>

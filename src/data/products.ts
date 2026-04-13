@@ -9,8 +9,10 @@ export type Product = {
   description: string;
   specs: { key: string; value: string }[];
   price: number;
+  salePrice?: number;
   image: string;
   featured: boolean;
+  spotlight?: boolean;
   availability: string;
 };
 
@@ -234,6 +236,7 @@ export const products: Product[] = [
     price: 30000,
     image: "/images/products/instruments-2.jpg",
     featured: false,
+    spotlight: true,
     availability: "In Stock",
   },
   {
@@ -537,6 +540,7 @@ export const products: Product[] = [
     price: 17500,
     image: "/images/products/pro-audio-1.jpg",
     featured: false,
+    spotlight: true,
     availability: "In Stock",
   },
   {
@@ -549,6 +553,7 @@ export const products: Product[] = [
     price: 26000,
     image: "/images/products/pro-audio-2.jpg",
     featured: false,
+    spotlight: true,
     availability: "In Stock",
   },
   {
@@ -559,6 +564,7 @@ export const products: Product[] = [
     description: "ALTO TS408 2000W 8\" SPEAKER 2000W 8-inch speaker for live sound reinforcement and events.",
     specs: [{ key: "Brand", value: "ALTO" }, { key: "Model", value: "TS408 2000W 8\" SPEAKER" }, { key: "Power", value: "2000W" }, { key: "Size", value: "8\"" }],
     price: 19500,
+    salePrice: 17500,
     image: "/images/products/pro-audio-1.jpg",
     featured: false,
     availability: "In Stock",
@@ -631,6 +637,7 @@ export const products: Product[] = [
     description: "FBT XPRO115A 1500W 15\" SPEAKER 1500W 15-inch speaker for live sound reinforcement and events.",
     specs: [{ key: "Brand", value: "FBT" }, { key: "Model", value: "XPRO115A 1500W 15\" SPEAKER" }, { key: "Power", value: "1500W" }, { key: "Size", value: "15\"" }],
     price: 47000,
+    salePrice: 42000,
     image: "/images/products/pro-audio-1.jpg",
     featured: false,
     availability: "In Stock",
@@ -787,6 +794,7 @@ export const products: Product[] = [
     description: "JBL PARTYBOX ENCORE V2 W/O MIC 2W speaker for live sound reinforcement and events.",
     specs: [{ key: "Brand", value: "JBL" }, { key: "Model", value: "PARTYBOX ENCORE V2 W/O MIC" }, { key: "Power", value: "2W" }],
     price: 18000,
+    salePrice: 15000,
     image: "/images/products/pro-audio-2.jpg",
     featured: true,
     availability: "In Stock",
@@ -1256,6 +1264,7 @@ export const products: Product[] = [
     description: "PEAVEY BANDIT 112 GUITAR AMP 100W 100W amplifier delivering reliable tone and power.",
     specs: [{ key: "Brand", value: "PEAVEY" }, { key: "Model", value: "BANDIT 112 GUITAR AMP 100W" }, { key: "Power", value: "100W" }],
     price: 29000,
+    salePrice: 26000,
     image: "/images/products/pro-audio-2.jpg",
     featured: false,
     availability: "In Stock",
@@ -1329,6 +1338,7 @@ export const products: Product[] = [
     description: "ALTO ZMX862 ANALOG MIXER mixer for live sound and studio applications.",
     specs: [{ key: "Brand", value: "ALTO" }, { key: "Model", value: "ZMX862 ANALOG MIXER" }],
     price: 8200,
+    salePrice: 7000,
     image: "/images/products/studio-2.jpg",
     featured: false,
     availability: "In Stock",
@@ -1401,6 +1411,7 @@ export const products: Product[] = [
     description: "SOUNDCRAFT NOTEPADFX 12 ANALOG MIXER mixer for live sound and studio applications.",
     specs: [{ key: "Brand", value: "SOUNDCRAFT" }, { key: "Model", value: "NOTEPADFX 12 ANALOG MIXER" }],
     price: 14500,
+    salePrice: 12500,
     image: "/images/products/studio-2.jpg",
     featured: false,
     availability: "In Stock",
@@ -1463,6 +1474,7 @@ export const products: Product[] = [
     price: 26000,
     image: "/images/products/soundcraft-nano-m08bt-analog-mixer.jpg",
     featured: false,
+    spotlight: true,
     availability: "In Stock",
   },
   {
@@ -1620,6 +1632,7 @@ export const products: Product[] = [
     price: 28800,
     image: "/images/products/studio-1.jpg",
     featured: false,
+    spotlight: true,
     availability: "In Stock",
   },
   {
@@ -1727,6 +1740,7 @@ export const products: Product[] = [
     description: "AUDIO TECHNICA ATH M30X MONITORING HEADPHONES headphones for studio monitoring and critical listening.",
     specs: [{ key: "Brand", value: "AUDIO TECHNICA" }, { key: "Model", value: "ATH M30X MONITORING HEADPHONES" }],
     price: 5800,
+    salePrice: 4800,
     image: "/images/products/audio-technica-ath-m30x-monitoring-headphones.jpg",
     featured: false,
     availability: "In Stock",
@@ -1765,6 +1779,7 @@ export const products: Product[] = [
     price: 8500,
     image: "/images/products/studio-2.jpg",
     featured: true,
+    spotlight: true,
     availability: "In Stock",
   },
   // ===== MICROPHONES =====
@@ -2016,6 +2031,7 @@ export const products: Product[] = [
     description: "CAROL UW600 DUAL WIRELESS MIC microphone for professional recording and live performance.",
     specs: [{ key: "Brand", value: "CAROL" }, { key: "Model", value: "UW600 DUAL WIRELESS MIC" }],
     price: 17000,
+    salePrice: 14500,
     image: "/images/products/studio-1.jpg",
     featured: false,
     availability: "Contact for Availability",

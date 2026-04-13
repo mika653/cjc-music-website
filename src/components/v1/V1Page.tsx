@@ -1,6 +1,8 @@
 import Header from "../Header";
 import Hero from "../Hero";
+import BrandMarquee from "../BrandMarquee";
 import ProductCategories from "../ProductCategories";
+import Spotlight from "../Spotlight";
 import Brands from "../Brands";
 import About from "../About";
 import CTABanner from "../CTABanner";
@@ -13,8 +15,10 @@ export default function V1Page() {
       <Header />
       <main id="main-content">
         <Hero />
-        <div className="section-divider" />
+        <BrandMarquee />
         <ProductCategories />
+        <div className="section-divider" />
+        <Spotlight />
         <div className="section-divider" />
         <Brands />
         <div className="section-divider" />
