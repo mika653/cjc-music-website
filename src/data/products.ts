@@ -1339,7 +1339,7 @@ export const products: Product[] = [
     specs: [{ key: "Brand", value: "ALTO" }, { key: "Model", value: "ZMX862 ANALOG MIXER" }],
     price: 8200,
     salePrice: 7000,
-    image: "/images/products/studio-2.jpg",
+    image: "/images/products/alto-zmx862-analog-mixer.jpg",
     featured: false,
     availability: "In Stock",
   },
