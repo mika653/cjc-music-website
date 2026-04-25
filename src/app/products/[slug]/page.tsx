@@ -185,9 +185,26 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </span>
             </div>
 
-            <p className="text-sm text-gray-400 leading-relaxed mb-8">
+            <p className="text-sm text-gray-400 leading-relaxed mb-6">
               {product.description}
             </p>
+
+            {/* Key Features */}
+            {product.features && product.features.length > 0 && (
+              <div className="mb-8 p-5 bg-white/[0.03] border border-white/5 rounded-xl">
+                <h2 className="text-xs font-semibold text-[#C4853A] tracking-[0.15em] uppercase mb-3">
+                  Key Features
+                </h2>
+                <ul className="space-y-2">
+                  {product.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-gray-300">
+                      <span className="text-[#C4853A] mt-1 flex-shrink-0">•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Inquiry CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
