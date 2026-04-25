@@ -39,19 +39,19 @@ export default function BrandMarquee() {
         {[...brands, ...brands].map((brand, i) => (
           <div
             key={`${brand.name}-${i}`}
-            className="mx-8 sm:mx-12 flex items-center justify-center h-8 opacity-60 hover:opacity-100 transition-opacity"
+            className="mx-8 sm:mx-12 flex items-center justify-center h-10 hover:opacity-100 transition-opacity"
           >
             {brand.logo ? (
               <Image
                 src={brand.logo}
                 alt={brand.name}
-                width={100}
-                height={32}
-                className="h-7 sm:h-8 w-auto object-contain"
+                width={120}
+                height={40}
+                className="h-8 sm:h-10 w-auto object-contain"
                 unoptimized
               />
             ) : (
-              <span className="text-sm sm:text-base font-semibold text-gray-500 tracking-wider select-none">
+              <span className="text-base sm:text-lg font-semibold text-gray-400 tracking-wider select-none">
                 {brand.name}
               </span>
             )}
