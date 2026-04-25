@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type Brand = {
   name: string;
   logo?: string;
@@ -39,16 +37,15 @@ export default function BrandMarquee() {
         {[...brands, ...brands].map((brand, i) => (
           <div
             key={`${brand.name}-${i}`}
-            className="mx-8 sm:mx-12 flex items-center justify-center h-10 hover:opacity-100 transition-opacity"
+            className="mx-8 sm:mx-12 flex items-center justify-center h-12"
           >
             {brand.logo ? (
-              <Image
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
                 src={brand.logo}
                 alt={brand.name}
-                width={120}
-                height={40}
-                className="h-8 sm:h-10 w-auto object-contain"
-                unoptimized
+                className="h-10 sm:h-12 w-auto"
+                style={{ width: "48px", height: "48px" }}
               />
             ) : (
               <span className="text-base sm:text-lg font-semibold text-gray-400 tracking-wider select-none">
