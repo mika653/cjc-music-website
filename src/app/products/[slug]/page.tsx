@@ -40,9 +40,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   if (!product) notFound();
 
-  // Get related products (same category, exclude current)
+  // Get related products (same category, exclude current and hidden)
   const related = products
-    .filter((p) => p.category === product.category && p.slug !== product.slug)
+    .filter((p) => p.category === product.category && p.slug !== product.slug && !p.hidden)
     .slice(0, 4);
 
   const productJsonLd = {

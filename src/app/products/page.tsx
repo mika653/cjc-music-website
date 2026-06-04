@@ -5,12 +5,14 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, X, SlidersHorizontal, ChevronRight, Phone, MessageCircle } from "lucide-react";
-import { products, categories } from "@/data/products";
+import { visibleProducts as products, categories } from "@/data/products";
 import { Suspense } from "react";
 
 const PRODUCTS_PER_PAGE = 24;
 
-const categoryNames = categories.map(c => c.name);
+// Only show category chips that still have visible products
+const visibleCategoryNames = new Set(products.map(p => p.category));
+const categoryNames = categories.map(c => c.name).filter(name => visibleCategoryNames.has(name));
 
 function ProductsContent() {
   const searchParams = useSearchParams();

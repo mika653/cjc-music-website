@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, MessageCircle } from "lucide-react";
-import { products } from "@/data/products";
+import { visibleProducts as products } from "@/data/products";
 
 const spotlightProducts = products.filter((p) => p.spotlight);
 
