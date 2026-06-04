@@ -45,27 +45,40 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     .filter((p) => p.category === product.category && p.slug !== product.slug && !p.hidden)
     .slice(0, 4);
 
+  // Price valid until end of next year (refreshed on each build/deploy)
+  const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
+  const offerPrice = product.salePrice || product.price;
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     brand: { "@type": "Brand", name: product.brand },
     description: product.description,
+    sku: product.slug,
     image: `https://cjcmusicphilippines.com${product.image}`,
     url: `https://cjcmusicphilippines.com/products/${product.slug}`,
-    offers: {
-      "@type": "Offer",
-      price: product.salePrice || product.price,
-      priceCurrency: "PHP",
-      availability:
-        product.availability === "In Stock"
-          ? "https://schema.org/InStock"
-          : "https://schema.org/PreOrder",
-      seller: {
-        "@type": "Organization",
-        name: "CJC Music Philippines",
-      },
-    },
+    // Only emit an Offer when we have a real price; price-0 items are "contact for pricing"
+    ...(offerPrice > 0
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: offerPrice,
+            priceCurrency: "PHP",
+            priceValidUntil,
+            itemCondition: "https://schema.org/NewCondition",
+            availability:
+              product.availability === "In Stock"
+                ? "https://schema.org/InStock"
+                : "https://schema.org/PreOrder",
+            url: `https://cjcmusicphilippines.com/products/${product.slug}`,
+            seller: {
+              "@type": "Organization",
+              name: "CJC Music Philippines",
+            },
+          },
+        }
+      : {}),
   };
 
   const breadcrumbJsonLd = {
