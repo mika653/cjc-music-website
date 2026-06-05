@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MessageCircle, Phone, ArrowLeft, Shield, Truck, ChevronRight } from "lucide-react";
+import { MessageCircle, MessageSquare, Phone, ArrowLeft, Shield, Truck, ChevronRight } from "lucide-react";
 import { products } from "@/data/products";
 
 export function generateStaticParams() {
@@ -225,6 +225,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 target="_blank" rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 bg-[#C4853A] hover:bg-[#A06B2A] text-black font-semibold px-6 py-3.5 rounded-lg transition-colors cursor-pointer">
                 <MessageCircle className="w-5 h-5" /> Inquire on Messenger
+              </a>
+              <a href={`sms:09224457975?&body=${encodeURIComponent(`Hi! I'm interested in the ${product.name}. Is this available?`)}`}
+                className="flex-1 inline-flex items-center justify-center gap-2 border border-white/10 hover:border-[#C4853A]/50 text-white font-medium px-6 py-3.5 rounded-lg transition-all cursor-pointer">
+                <MessageSquare className="w-5 h-5" /> Text us
               </a>
               <a href="tel:09224457975"
                 className="flex-1 inline-flex items-center justify-center gap-2 border border-white/10 hover:border-[#C4853A]/50 text-white font-medium px-6 py-3.5 rounded-lg transition-all cursor-pointer">
