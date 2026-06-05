@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Browse 200+ professional audio equipment, musical instruments, mixers, speakers, microphones, and more. All authentic, all branded. Nationwide delivery across the Philippines.",
   alternates: {
-    canonical: "/products",
+    canonical: "/products/",
   },
   openGraph: {
     title: "Product Catalogue | CJC Music Philippines",

@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
       title: `${product.name} - ${product.brand}`,
       description: product.description,
       alternates: {
-        canonical: `/products/${slug}`,
+        canonical: `/products/${slug}/`,
       },
       openGraph: {
         title: `${product.name} - ${product.brand} | CJC Music Philippines`,
