@@ -1414,8 +1414,9 @@ export const products: Product[] = [
     price: 95000,
     salePrice: 86000,
     image: "/images/products/jbl-prx-915-2000w-speaker.jpg",
-    featured: true,
+    featured: false,
     availability: "Contact for Availability",
+    hidden: true,
   },
   {
     slug: "jbl-prx-915-2000w-speaker-2",
