@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/images/cjc-logo.jpg",
+    apple: "/apple-touch-icon.png",
   },
 };
 
