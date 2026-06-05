@@ -655,7 +655,7 @@ export const products: Product[] = [
     ],
     price: 9800,
     salePrice: 8000,
-    image: "/images/products/instruments-2.jpg",
+    image: "/images/products/akai-akai-mpk-mini.jpg",
     featured: false,
     availability: "In Stock",
   },
