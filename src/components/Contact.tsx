@@ -90,15 +90,22 @@ export default function Contact() {
               </div>
             </a>
 
-            <div className="flex items-start gap-4 p-5 bg-charcoal/30 border border-white/5 rounded-xl">
+            <a
+              href="https://maps.app.goo.gl/HVp8FWEjjy8aZ9we9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 p-5 bg-charcoal/30 border border-white/5 rounded-xl hover:border-gold/20 transition-all cursor-pointer group"
+            >
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gold/10 text-gold flex-shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-white">Location</h3>
-                <p className="text-sm text-gray-400 mt-0.5">Philippines</p>
+                <h3 className="text-sm font-semibold text-white group-hover:text-gold transition-colors">
+                  Location
+                </h3>
+                <p className="text-sm text-gray-400 mt-0.5">View on Google Maps</p>
               </div>
-            </div>
+            </a>
 
             <div className="flex items-start gap-4 p-5 bg-charcoal/30 border border-white/5 rounded-xl">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gold/10 text-gold flex-shrink-0">
