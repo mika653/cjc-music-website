@@ -8,7 +8,7 @@ import Image from "next/image";
 // "equal" to the eye — thin wordmarks look lighter than compact marks. Nudge
 // long wordmarks down (~0.85) and minimal marks up (>1) until they feel even.
 const brands: { name: string; logo?: string; scale?: number }[] = [
-  { name: "Bose", logo: "bose.svg", scale: 1 },
+  { name: "Bose", logo: "bose.svg", scale: 1.3 },
   { name: "JBL", logo: "jbl.svg", scale: 0.95 },
   { name: "Yamaha", logo: "yamaha.svg", scale: 1 },
   { name: "Sennheiser", logo: "sennheiser.svg", scale: 0.85 },
